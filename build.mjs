@@ -2,7 +2,7 @@
 import { writeFileSync } from 'node:fs';
 
 const SUPPORT_ENDPOINT = 'https://www.izeus.org/_functions/support';
-const SITE = 'https://boothcast.izeus.org';
+const SITE = 'https://photoboothparty.izeus.org';
 const V = Date.now().toString(36);
 
 const appleLogo = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>';
@@ -63,7 +63,7 @@ function layout({ file, title, description, body, script = false }) {
 <body>
 ${background}
 <header class="nav">
-  <a class="brand" href="index.html"><img src="assets/icon-180.png" alt="" width="36" height="36"><span>BoothCast</span></a>
+  <a class="brand" href="index.html"><img src="assets/icon-180.png" alt="" width="36" height="36"><span>Photo Booth Party</span></a>
   <nav class="nav-links">${links}</nav>
 </header>
 ${body}
@@ -75,7 +75,7 @@ ${script ? `<script src="assets/site.js?v=${V}"></script>\n` : ''}</body>
 
 const pages = {
   'index.html': {
-    title: 'BoothCast: Party Photo Booth for iPad and iPhone',
+    title: 'Photo Booth Party: Hands-Free Photo Booth for iPad and iPhone',
     description: 'A hands-free party photo booth for iPad and iPhone. Stand it by the TV and guests just step in: countdown, three photos, fun backgrounds with no green screen, and the results on your TV.',
     script: true,
     body: `<main class="wrap wide">
@@ -83,7 +83,7 @@ const pages = {
   <div>
     <span class="eyebrow">Parties &middot; iPad &amp; iPhone &middot; Hands-free</span>
     <h1>The photo booth <span class="grad">nobody has to touch</span></h1>
-    <p class="lead">Stand your iPad or iPhone by the TV. When guests step close, BoothCast counts down, snaps three photos, and puts them in front of party backgrounds with no green screen. The photos play on your TV, and guests save theirs to their phones. Birthdays, Christmas, Halloween, New Year, weddings, office parties: any party.</p>
+    <p class="lead">Stand your iPad or iPhone by the TV. When guests step close, Photo Booth Party counts down, snaps three photos, and puts them in front of party backgrounds with no green screen. The photos play on your TV, and guests save theirs to their phones. Birthdays, Christmas, Halloween, New Year, weddings, office parties: any party.</p>
     <div class="cta-row">
       ${storeBadge}
       <a class="btn btn-ghost" href="#how">How it works</a>
@@ -91,9 +91,9 @@ const pages = {
     <p class="meta">For iPad and iPhone (iOS or iPadOS 17 or later) &middot; Apple TV optional &middot; No accounts, nothing uploaded</p>
   </div>
   <div class="pitch-art">
-    ${frame(1, 'BoothCast on iPad: guests in front of a party background with the countdown running', false)}
-    <div class="pitch-phone">${phone(1, 'BoothCast on iPhone showing the same party countdown', false)}</div>
-    <img class="pitch-logo" src="assets/icon-512.png" alt="BoothCast app icon" width="120" height="120">
+    ${frame(1, 'Photo Booth Party on iPad: guests in front of a party background with the countdown running', false)}
+    <div class="pitch-phone">${phone(1, 'Photo Booth Party on iPhone showing the same party countdown', false)}</div>
+    <img class="pitch-logo" src="assets/icon-512.png" alt="Photo Booth Party app icon" width="120" height="120">
   </div>
 </section>
 
@@ -155,7 +155,7 @@ const pages = {
   <div class="band glass">
     <img src="assets/icon-512.png" alt="" width="88" height="88">
     <h2>Ready to start the party?</h2>
-    <p data-store-text>BoothCast is coming soon to the App Store for iPad and iPhone.</p>
+    <p data-store-text>Photo Booth Party is coming soon to the App Store for iPad and iPhone.</p>
     ${storeBadge}
     <p class="fine">Needs an iPad or iPhone with iOS or iPadOS 17 or later. Apple TV is optional.</p>
   </div>
@@ -164,20 +164,20 @@ const pages = {
   },
 
   'support.html': {
-    title: 'BoothCast Support',
-    description: 'Help, FAQ and contact form for the BoothCast app on iPad and iPhone.',
+    title: 'Photo Booth Party Support',
+    description: 'Help, FAQ and contact form for the Photo Booth Party app on iPad and iPhone.',
     script: true,
     body: `<main class="wrap"><article class="doc glass">
 <h1>Support</h1>
-<p class="muted">BoothCast &middot; iPad &amp; iPhone</p>
-<p>BoothCast is a hands-free party photo booth for your iPad or iPhone.</p>
+<p class="muted">Photo Booth Party &middot; iPad &amp; iPhone</p>
+<p>Photo Booth Party is a hands-free party photo booth for your iPad or iPhone.</p>
 
 <h2 id="contact">Contact us</h2>
 <p>For help, bug reports or feedback, send us a message and we'll reply by email.</p>
 <p class="notice ok" id="sent" role="status" hidden>Thanks! Your message has been sent. We'll reply by email.</p>
 <p class="notice err" id="error" role="alert" hidden></p>
 <form class="contact" method="post" action="${SUPPORT_ENDPOINT}">
-  <input type="hidden" name="app" value="BoothCast">
+  <input type="hidden" name="app" value="PhotoBoothParty">
   <input type="hidden" name="return" value="${SITE}/support.html">
   <label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>
   <label>Your email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
@@ -188,13 +188,13 @@ const pages = {
 
 <h2>Frequently asked questions</h2>
 <p class="faq-q">The TV isn't showing the photos.</p>
-<p class="faq-a">Start Screen Mirroring from Control Center on the device and pick your Apple TV, then reopen the BoothCast app.</p>
+<p class="faq-a">Start Screen Mirroring from Control Center on the device and pick your Apple TV, then reopen the Photo Booth Party app.</p>
 <p class="faq-q">Guests can't open the QR code.</p>
 <p class="faq-a">Their phones must be on the same Wi-Fi network as your device. The gallery is served by the device itself, so it only works on your home network while the app is open.</p>
 <p class="faq-q">How do I delete photos?</p>
 <p class="faq-a">Tap the photo count in the app to open the host admin, where you can delete bursts.</p>
 <p class="faq-q">The camera is off or the booth can't see anyone.</p>
-<p class="faq-a">Open Settings &rarr; BoothCast and make sure Camera is switched on.</p>
+<p class="faq-a">Open Settings &rarr; Booth Party and make sure Camera is switched on.</p>
 
 <h2>Privacy</h2>
 <p>Your party photos stay on your iPad or iPhone. <a href="privacy.html">Read the privacy policy</a>.</p>
@@ -202,12 +202,12 @@ const pages = {
   },
 
   'privacy.html': {
-    title: 'BoothCast Privacy Policy',
-    description: 'How the BoothCast app handles information.',
+    title: 'Photo Booth Party Privacy Policy',
+    description: 'How the Photo Booth Party app handles information.',
     body: `<main class="wrap"><article class="doc glass">
 <h1>Privacy Policy</h1>
 <p class="muted">Last updated: 2 November 2026</p>
-<p>BoothCast (&ldquo;we&rdquo;, &ldquo;our&rdquo;) is a party photo booth app for iPad and iPhone, published by iZeus Pty Ltd. This policy explains what information the app uses.</p>
+<p>Photo Booth Party (&ldquo;we&rdquo;, &ldquo;our&rdquo;) is a party photo booth app for iPad and iPhone, published by iZeus Pty Ltd. This policy explains what information the app uses.</p>
 
 <h2>In short</h2>
 <p>The app collects no personal data. It has no accounts, no analytics, no ads and no tracking.</p>
@@ -228,7 +228,7 @@ const pages = {
 <p>If you contact us through the <a href="support.html#contact">support form</a>, we receive the name, email address and message you enter. We use them only to reply to you, and they are stored by our website provider, Wix.</p>
 
 <h2>Children</h2>
-<p>BoothCast is for party hosts. It is not directed at children, and we do not knowingly collect information from them.</p>
+<p>Photo Booth Party is for party hosts. It is not directed at children, and we do not knowingly collect information from them.</p>
 
 <h2>Contact</h2>
 <p>Questions about privacy? Send us a message through the <a href="support.html#contact">support form</a>.</p>
@@ -236,16 +236,16 @@ const pages = {
   },
 
   'terms.html': {
-    title: 'BoothCast Terms of Use',
-    description: 'Terms of Use (EULA) for the BoothCast app.',
+    title: 'Photo Booth Party Terms of Use',
+    description: 'Terms of Use (EULA) for the Photo Booth Party app.',
     body: `<main class="wrap"><article class="doc glass">
 <h1>Terms of Use</h1>
 <p class="muted">Last updated: 2 November 2026</p>
-<p>BoothCast is a party photo booth app for iPad and iPhone from iZeus Pty Ltd. By downloading or using BoothCast you agree to these terms and to Apple&rsquo;s standard Licensed Application End User License Agreement (EULA).</p>
+<p>Photo Booth Party is a party photo booth app for iPad and iPhone from iZeus Pty Ltd. By downloading or using Photo Booth Party you agree to these terms and to Apple&rsquo;s standard Licensed Application End User License Agreement (EULA).</p>
 <p>Apple&rsquo;s standard EULA: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a></p>
 
 <h2>Hosts are responsible</h2>
-<p>If you run BoothCast at an event, you are responsible for getting your guests' consent to be photographed, and for what is shown on your TV, including any background pictures guests send. Take photos down if a guest asks. Be aware that anyone on your Wi-Fi network who scans the QR code can view and save the party's photos while the app is open.</p>
+<p>If you run Photo Booth Party at an event, you are responsible for getting your guests' consent to be photographed, and for what is shown on your TV, including any background pictures guests send. Take photos down if a guest asks. Be aware that anyone on your Wi-Fi network who scans the QR code can view and save the party's photos while the app is open.</p>
 
 <h2>Fair use</h2>
 <p>Use the app lawfully and considerately. Don't use it to photograph people who have not agreed to it, or to display content that is unlawful or harmful.</p>

@@ -23,7 +23,7 @@
   }
 
   if (APP_ID && document.querySelector('[data-store]')) {
-    window.boothCastStore = function (data) {
+    window.photoBoothPartyStore = function (data) {
       var app = data && data.results && data.results[0];
       if (!app || !app.trackViewUrl) return;
       document.querySelectorAll('[data-store]').forEach(function (a) {
@@ -31,11 +31,11 @@
         a.querySelector('[data-store-label]').textContent = 'Download on the';
       });
       document.querySelectorAll('[data-store-text]').forEach(function (p) {
-        p.textContent = 'BoothCast is available now on the App Store for iPad and iPhone.';
+        p.textContent = 'Photo Booth Party is available now on the App Store for iPad and iPhone.';
       });
     };
     var s = document.createElement('script');
-    s.src = 'https://itunes.apple.com/lookup?id=' + encodeURIComponent(APP_ID) + '&country=au&callback=boothCastStore';
+    s.src = 'https://itunes.apple.com/lookup?id=' + encodeURIComponent(APP_ID) + '&country=au&callback=photoBoothPartyStore';
     document.head.appendChild(s);
   }
 })();
